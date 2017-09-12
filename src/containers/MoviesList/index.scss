@@ -1,0 +1,25 @@
+.custom-card {
+    display: flex;
+    flex-direction: row;
+    .card-img {
+        flex-basis: 30%;
+        img {
+            width: 150px;
+            max-height: 250px;
+        }
+    }
+    .card-content {
+        flex-basis: 70%;
+        max-width: 50%;
+    }
+}
+
+.ui.header {
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    padding: 5px; /* Поля */
+    text-overflow: ellipsis; /* Многоточие */
+}
+.ui.card {
+    height: 100%;
+}

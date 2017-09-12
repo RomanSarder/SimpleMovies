@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.custom-card {
+  display: flex;
+  flex-direction: row; }
+  .custom-card .card-img {
+    flex-basis: 30%; }
+    .custom-card .card-img img {
+      width: 150px;
+      max-height: 250px; }
+  .custom-card .card-content {
+    flex-basis: 70%;
+    max-width: 50%; }
+
+.ui.header {
+  white-space: nowrap;
+  /* Отменяем перенос текста */
+  overflow: hidden;
+  /* Обрезаем содержимое */
+  padding: 5px;
+  /* Поля */
+  text-overflow: ellipsis;
+  /* Многоточие */ }
+
+.ui.card {
+  height: 100%; }

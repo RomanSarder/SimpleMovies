@@ -14,7 +14,7 @@ class App extends Component {
   
   render() {
     return (
-      <div className="ui grid container">
+      <div className="ui grid">
         <Switch>
           <Route path="/popular" component={Popular}/>
           <Route path="/now_playing" component={NowPlaying}/>
