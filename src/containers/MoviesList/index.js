@@ -26,7 +26,7 @@ export class MoviesList extends Component {
     }
 
     componentWillUnmount = () => {
-        this.props.searchText("", this.props.section);
+        this.props.setSearchText("", this.props.section);
     }
     
 
@@ -46,7 +46,9 @@ export class MoviesList extends Component {
                 )
             })
         } else {
-            return <p>No movies on this page fits your search criteria</p>
+            return <div className="sixteen wide column">
+                <h1 className="ui centered header">There is no movies fitting your search criteria</h1>
+            </div>
         }
     }
     
@@ -55,8 +57,8 @@ export class MoviesList extends Component {
         let moviesWithImg = includeImages(movies, config)
         return (
             <div className="ui grid two column centered container">
-                <div className="row twelve column centered">
-                    <div className="column centered">
+                <div className="row one column centered">
+                    <div className="column" style={{textAlign: "center"}}>
                         <div className="ui icon input">
                             <input type="text" placeholder="Search..." onChange={this.handleSearchTextChange}/>
                             <i className="search icon"></i>

@@ -28,7 +28,7 @@ export class NowPlayingSeries extends Component {
           nameKey="original_name"
           movies={nowPlaying} 
           config={config}
-          section="POPULAR"
+          section="NOW_PLAYING"
           onPageChanged={this.handleNewPage}/>}
       </div>
     )
