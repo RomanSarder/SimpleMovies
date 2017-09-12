@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import Navbar from 'containers/Navbar';
+import Navbar from 'components/Navbar';
 import Popular from "containers/PopularMovies";
 import NowPlaying from "containers/NowPlayingSeries";
 
