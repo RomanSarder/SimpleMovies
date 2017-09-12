@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ({movie, nameKey}) {
     return (
-        <div className="eight wide column">
+        <div className="column">
             <div className="custom-card">
                 <div className="card-img">
                     <img className="ui bordered image" src={movie.poster_path} alt="" />

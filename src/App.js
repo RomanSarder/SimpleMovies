@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="ui grid">
-        <Navbar onSearchTextChange={this.props.setSearchText}/>
+        <Navbar/>
         <Switch>
           <Route path="/popular" component={Popular}/>
           <Route path="/now_playing" component={NowPlaying}/>
@@ -29,10 +29,6 @@ class App extends Component {
 
 const mapDispatchers = {
   loadConfig,
-  setSearchText: (text,section) => dispatch => dispatch({
-    type: "SET_" + section + "_SEARCH_TEXT",
-    payload: text
-  })
 }
 
 export default withRouter(connect(null, mapDispatchers)(App));

@@ -27,6 +27,7 @@ export class PopularMovies extends Component {
           nameKey="title"
           movies={popular} 
           config={config}
+          section="NOW_PLAYING"
           onPageChanged={this.handleNewPage}/>}
       </div>
     )
