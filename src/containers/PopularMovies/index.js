@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 import MoviesList from 'containers/MoviesList';
 
-import {loadPopularMovies} from 'store/actions/movies';
+import {loadPopularMovies, loadPopularPage} from 'store/actions/movies';
 
 export class PopularMovies extends Component {
   componentWillMount = () => {
     this.props.loadPopularMovies();
+  }
+
+  handleNewPage = (page) => {
+    if (this.props.popular.page !== page) {
+      this.props.loadPopularMovies(page);
+    }
   }
   
   render() {
@@ -16,7 +23,11 @@ export class PopularMovies extends Component {
     let configExist = Object.keys(config).length > 0;
     return (
       <div>
-        {popularExist && configExist && <MoviesList movies={popular} config={config}/>}
+        {popularExist && configExist && 
+        <MoviesList 
+          movies={popular} 
+          config={config}
+          onPageChanged={this.handleNewPage}/>}
       </div>
     )
   }
@@ -30,7 +41,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchers = {
-  loadPopularMovies
+  loadPopularMovies,
 }
 
 export default connect(mapStateToProps, mapDispatchers)(PopularMovies)

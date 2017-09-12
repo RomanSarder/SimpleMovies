@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import Popular from "containers/PopularMovies";
@@ -28,4 +28,4 @@ const mapDispatchers = {
   loadConfig
 }
 
-export default connect(null, mapDispatchers)(App);
+export default withRouter(connect(null, mapDispatchers)(App));
