@@ -17,7 +17,8 @@ export class Navbar extends Component {
     }
 
     search = debounce(() => {
-        this.props.onSearchTextChange(this.state.searchText);
+        let section = this.props.location.pathname.slice(1).toUpperCase();
+        this.props.onSearchTextChange(this.state.searchText, section);
     }, 600)
 
     render() {

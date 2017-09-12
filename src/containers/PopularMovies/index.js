@@ -23,7 +23,8 @@ export class PopularMovies extends Component {
     return (
       <div>
         {popularExist && configExist && 
-        <MoviesList 
+        <MoviesList
+          nameKey="title"
           movies={popular} 
           config={config}
           onPageChanged={this.handleNewPage}/>}

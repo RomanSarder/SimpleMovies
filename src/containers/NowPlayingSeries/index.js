@@ -3,16 +3,16 @@ import {connect} from 'react-redux';
 
 import MoviesList from 'containers/MoviesList';
 
-import {loadNowPlayingMovies} from 'store/actions/movies';
+import {loadNowPlayingSeries} from 'store/actions/tvseries';
 
-export class NowPlayingMovies extends Component {
+export class NowPlayingSeries extends Component {
   componentWillMount = () => {
-    this.props.loadNowPlayingMovies();
+    this.props.loadNowPlayingSeries();
   }
 
   handleNewPage = (page) => {
     if (this.props.nowPlaying.page !== page) {
-      this.props.loadNowPlayingMovies(page);
+      this.props.loadNowPlayingSeries(page);
     }
   }
   
@@ -20,10 +20,12 @@ export class NowPlayingMovies extends Component {
     let {config, nowPlaying} = this.props;
     let nowPlayingExist = nowPlaying.results.length > 0;
     let configExist = Object.keys(config).length > 0;
+
     return (
       <div>
         {nowPlayingExist && configExist && 
-        <MoviesList 
+        <MoviesList
+          nameKey="original_name"
           movies={nowPlaying} 
           config={config}
           onPageChanged={this.handleNewPage}/>}
@@ -34,13 +36,13 @@ export class NowPlayingMovies extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    nowPlaying: state.movies.nowPlaying,
+    nowPlaying: state.tvseries.nowPlaying,
     config: state.config
   }
 }
 
 const mapDispatchers = {
-  loadNowPlayingMovies,
+  loadNowPlayingSeries,
 }
 
-export default connect(mapStateToProps, mapDispatchers)(NowPlayingMovies)
+export default connect(mapStateToProps, mapDispatchers)(NowPlayingSeries)

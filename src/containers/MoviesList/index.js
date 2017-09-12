@@ -18,7 +18,7 @@ export class MoviesList extends Component {
         if (movies.display.length > 0) {
             return movies.display.map((movie, i) => {
                 return (
-                    <MovieCard movie={movie} key={i} />
+                    <MovieCard movie={movie} key={i} nameKey={this.props.nameKey} />
                 )
             })
         } else {

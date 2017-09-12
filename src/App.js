@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import Navbar from 'containers/Navbar';
 import Popular from "containers/PopularMovies";
-import NowPlaying from "containers/NowPlayingMovies";
+import NowPlaying from "containers/NowPlayingSeries";
 
 import {loadConfig} from 'store/actions/config';
 
@@ -29,8 +29,8 @@ class App extends Component {
 
 const mapDispatchers = {
   loadConfig,
-  setSearchText: text => dispatch => dispatch({
-    type: "SET_SEARCH_TEXT",
+  setSearchText: (text,section) => dispatch => dispatch({
+    type: "SET_" + section + "_SEARCH_TEXT",
     payload: text
   })
 }

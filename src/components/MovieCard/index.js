@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ({movie}) {
+export default function ({movie, nameKey}) {
     return (
         <div className="eight wide column">
             <div className="custom-card">
@@ -10,7 +10,7 @@ export default function ({movie}) {
                 <div className="card-content">
                     <div className="ui card">
                         <div className="content">
-                            <div className="ui small header">{movie.title}</div>
+                            <div className="ui small header">{movie[nameKey]}</div>
                             <div className="meta">
                                 <span>Rating: {movie.vote_average}</span>
                                 <span>Release: {movie.release_date}</span>

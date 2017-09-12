@@ -1,7 +1,7 @@
 import filterByText from 'helpers/filterByText';
 
 const INITIAL_STATE = {
-    popular: {
+    nowPlaying: {
         searchText: "",
         results: [],
         display: []
@@ -10,22 +10,22 @@ const INITIAL_STATE = {
 
 export default function (state = INITIAL_STATE, {type, payload}) {
     switch (type) {
-        case "SET_POPULAR_MOVIES":
+        case "SET_NOW_PLAYING_TVSERIES":
             return {
                 ...state,
-                popular: {
-                    ...state.popular,
+                nowPlaying: {
+                    ...state.nowPlaying,
                     ...payload,
-                    display: filterByText(payload.results, state.popular.searchText)
+                    display: filterByText(payload.results, state.nowPlaying.searchText, "name")
                 }
             }
-        case "SET_POPULAR_SEARCH_TEXT":
+        case "SET_NOW_PLAYING_SEARCH_TEXT":
             return {
                 ...state,
-                popular: {
-                    ...state.popular,
+                nowPlaying: {
+                    ...state.nowPlaying,
                     searchText: payload,
-                    display: filterByText(state.popular.results, payload)
+                    display: filterByText(state.nowPlaying.results, payload, "name")
                 }
             }
         default:
