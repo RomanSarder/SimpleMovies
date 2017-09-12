@@ -5,7 +5,7 @@ export default function ({movie}) {
         <div className="eight wide column">
             <div className="custom-card">
                 <div className="card-img">
-                    <img src={movie.poster_path} alt="" />
+                    <img className="ui bordered image" src={movie.poster_path} alt="" />
                 </div>
                 <div className="card-content">
                     <div className="ui card">

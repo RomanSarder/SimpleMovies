@@ -13,17 +13,25 @@ export class MoviesList extends Component {
         window.scrollTo(0,0)
       }
     }
+
+    renderMovieCards = (movies) => {
+        if (movies.display.length > 0) {
+            return movies.display.map((movie, i) => {
+                return (
+                    <MovieCard movie={movie} key={i} />
+                )
+            })
+        } else {
+            return <p>No movies on this page fits your search criteria</p>
+        }
+    }
     
     render() {
         let {movies, config} = this.props;
         let moviesWithImg = includeImages(movies, config)
         return (
-            <div className="ui grid container">
-                {moviesWithImg.results.map((movie, i) => {
-                    return (
-                        <MovieCard movie={movie} key={i} />
-                    )
-                })}
+            <div className="ui grid centered container">
+                {this.renderMovieCards(moviesWithImg)}
                 <Pagination
                     current={movies.page}
                     total={movies.total_results}

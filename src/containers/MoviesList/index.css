@@ -8,8 +8,7 @@
       width: 150px;
       max-height: 250px; }
   .custom-card .card-content {
-    flex-basis: 70%;
-    max-width: 50%; }
+    flex-basis: 70%; }
 
 .ui.header {
   white-space: nowrap;

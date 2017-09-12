@@ -1,7 +1,7 @@
 export default function (movies, config) {
     return {
         ...movies,
-        results: movies.results.map(movie => {
+        display: movies.display.map(movie => {
             return {
                 ...movie,
                 poster_path: movie.poster_path !== null ? concatImgUrl(config, movie) : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK_gbVrQ_tesypYBm_FlGt_NTN6nauEnpw0UkeBe7UwbeKEOsx"
