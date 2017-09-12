@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
 
 import MoviesList from 'containers/MoviesList';
 
-import {loadPopularMovies, loadPopularPage} from 'store/actions/movies';
+import {loadPopularMovies} from 'store/actions/movies';
 
 export class PopularMovies extends Component {
   componentWillMount = () => {

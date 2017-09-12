@@ -21,7 +21,7 @@ export default class Pagination extends Component {
         this.props.onPageChanged(page);
     }
     render() {
-        let {total, current, onPageChanged} = this.props;
+        let {current} = this.props;
         let {visible} = this.state;
         return  (
         <ul className="ui pagination menu">
@@ -31,6 +31,7 @@ export default class Pagination extends Component {
                         <li className={`item ${current === num ? 'active' : ''}`} 
                             onClick={this.handlePageChanged.bind(this, num)}
                             style={{cursor: "pointer"}}
+                            key={i}
                             >{num}</li>
                     )
                 })}

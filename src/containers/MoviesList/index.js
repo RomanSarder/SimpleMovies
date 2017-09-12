@@ -8,13 +8,14 @@ import Pagination from 'components/Pagination';
 import "./index.css";
 
 export class MoviesList extends Component {
-    state = {
-        current: 1,
-
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.movies.page !== this.props.movies.page) {
+        window.scrollTo(0,0)
+      }
     }
+    
     render() {
         let {movies, config} = this.props;
-        let {current} = this.state;
         let moviesWithImg = includeImages(movies, config)
         return (
             <div className="ui grid container">
