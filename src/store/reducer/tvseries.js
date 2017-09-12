@@ -19,7 +19,7 @@ export default function (state = INITIAL_STATE, {type, payload}) {
                     display: filterByText(payload.results, state.nowPlaying.searchText, "name")
                 }
             }
-        case "SET_NOW_PLAYING_SEARCH_TEXT":
+        case "SET_NOW_PLAYING_SERIES_SEARCH_TEXT":
             return {
                 ...state,
                 nowPlaying: {

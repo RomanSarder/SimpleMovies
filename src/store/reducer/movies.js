@@ -19,7 +19,7 @@ export default function (state = INITIAL_STATE, {type, payload}) {
                     display: filterByText(payload.results, state.popular.searchText)
                 }
             }
-        case "SET_POPULAR_SEARCH_TEXT":
+        case "SET_POPULAR_MOVIES_SEARCH_TEXT":
             return {
                 ...state,
                 popular: {

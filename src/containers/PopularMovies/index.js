@@ -27,7 +27,7 @@ export class PopularMovies extends Component {
           nameKey="title"
           movies={popular} 
           config={config}
-          section="POPULAR"
+          section="POPULAR_MOVIES"
           onPageChanged={this.handleNewPage}/>}
       </div>
     )
