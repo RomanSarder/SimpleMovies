@@ -1,10 +1,10 @@
-export default function (movies) {
+export default function (movies, config) {
     return {
         ...movies,
         results: movies.results.map(movie => {
             return {
                 ...movie,
-                posterPath: "http://image.tmdb.org/t/p/w500" + movie.posterPath
+                poster_path: `${config.images.base_url}${config.images.logo_sizes[5]}${movie.poster_path}`
             }
         })
     }

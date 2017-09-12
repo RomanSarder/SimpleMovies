@@ -11,8 +11,12 @@ export class PopularMovies extends Component {
   }
   
   render() {
+    let {config, popular} = this.props;
+    let popularExist = popular.results.length > 0;
+    let configExist = Object.keys(config).length > 0;
     return (
       <div>
+        {popularExist && configExist && <MoviesList movies={popular} config={config}/>}
       </div>
     )
   }
